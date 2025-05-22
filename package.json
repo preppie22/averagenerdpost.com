@@ -1,0 +1,20 @@
+{
+  "name": "averagenerdpost.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "rm -rf public && npx eleventy --serve"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-plugin-rss": "^2.0.4"
+  }
+}
