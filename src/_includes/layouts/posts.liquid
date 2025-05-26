@@ -1,8 +1,18 @@
 ---
-title: 'Posts'
 layout: layouts/base
+nextPage: "Older Posts"
+prevPage: "Newer Posts"
 ---
-    
-<article>
-    {{ content }}
-</article>
+
+<h1 style="margin-top: 0;">{{ title }}</h1>
+<section class="posts">
+  {% if pagination.items.size > 0 %}
+    {% render "partials/pagination"
+      , itemType: "post-listing"
+      , pagination: pagination 
+      , nextPage: nextPage
+      , prevPage: prevPage %}
+  {% else %}
+    No posts yet. Check back soon!
+  {% endif %}
+</section>

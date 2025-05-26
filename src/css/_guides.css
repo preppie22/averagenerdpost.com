@@ -1,0 +1,40 @@
+.guides {
+  display: block;
+  width: 100%;
+  max-width: 1440px;
+
+  h1 {
+    margin-top: 0;
+  }
+}
+.guide-listing .card-container:first-of-type {
+    @media (min-width: 60em) {
+        grid-column: 1 / span 2;
+
+        .card .title {
+            font-size: 1.8em;
+        }
+        .card .thumb {
+          padding-bottom: 50%;
+        }
+    }
+}
+.guide-listing {
+  display: grid;
+  
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  
+  @media (min-width: 30em) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (min-width: 60em) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+  }
+}

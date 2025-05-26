@@ -1,0 +1,7 @@
+<div class="listing-container">
+    <a href="{{ url | url }}" class="listing" aria-label="{{ data.title }}">
+        <span class="date"><time datetime="{{ data.date | dateToRfc822 }}">{{- data.date | dateToString: "LLL dd, yyyy" -}}</time></span>
+        <h1 class="title">{{ data.title }}</h1>
+        <span class="subtitle">{{ data.subtitle }}</span>
+    </a>
+</div>

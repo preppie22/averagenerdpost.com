@@ -1,0 +1,42 @@
+<div class="pagination">
+  <div class={{ itemType }}>
+    {% for item in pagination.items %}
+      {% if itemType == 'guide-listing' %}
+        {% render "partials/card"
+          , url: item.url
+          , data: item.data %}
+      {% else %}
+        {% render "partials/listing"
+          , url: item.url
+          , data: item.data %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% if pagination.pages.length > 1 %}
+    <nav class="page-selector" aria-label="Pagination">
+      <ul class="page-list">
+        <li {% unless pagination.href.previous %}class="disabled"{% endunless %}>
+          {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous | url }}" aria-label="Previous page">&lt;</a>
+          {% else %}
+            <a aria-disabled="true" aria-label="Previous page (disabled)" role="link">&lt;</a>
+          {% endif %}
+        </li>
+        {% for index in (1..pagination.pages.length) %}
+          {% assign href_index = index | minus: 1 %}
+          <li {% if pagination.pageNumber == href_index %}aria-current="page"{% endif %}
+            aria-label="Page {{ index }}">
+            <a href="{{ pagination.hrefs[href_index] | url }}">{{ index }}</a>
+          </li>
+        {% endfor %}
+        <li {% unless pagination.href.next %}class="disabled"{% endunless %}>
+          {% if pagination.href.next %}
+            <a href="{{ pagination.href.next | url }}" aria-label="Next page">&gt;</a>
+          {% else %}
+            <a aria-disabled="true" aria-label="Next page (disabled)" role="link">&gt;</a>
+          {% endif %}
+        </li>
+      </ul>
+    </nav>
+  {% endif %}
+</div>

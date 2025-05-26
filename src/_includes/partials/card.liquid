@@ -1,0 +1,17 @@
+<div class="card-container">
+  <a href="{{ url | url }}" class="card" aria-label="Read more about {{ data.tile }}">
+    {% if data.image %}
+      <div class="thumb" style="background-image: url({{ data.image | url }});"></div>
+    {% endif %}
+    <article class="content{% if data.image %} with-image{% endif %}">
+      <h1 class="title">{{ data.title }}</h1>
+      {% if data.subtitle %}
+        <p class="subtitle">{{ data.subtitle }}</p>
+      {% endif %}
+      <div class="metadata">
+        {% if data.date %}<span class="date"><time datetime="{{ data.date | dateToRfc822 }}">{{- data.date | dateToString: "LLL dd, yyyy" -}}</time></span>{% endif %}
+        {% if data.author %}<span class="author">{{- data.author -}}</span>{% endif %}
+      </div>
+    </article>
+  </a>
+</div>

@@ -1,4 +1,6 @@
 {
     "name": "Average Nerd Post",
-    "url": "http://averagenerdpost.com"
+    "url": "https://averagenerdpost.com",
+    "description": "Tech posts and guides delivered to you ad free.",
+    "author": "Piyush Puranik"
 }

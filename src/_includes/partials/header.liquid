@@ -1,10 +1,51 @@
 <header class="site-header">
-    <h1><a href="{{ '/' | url }}">{{ site.name }}</a></h1>
-    <nav>
-        <ul>
-            {% for nav_item in navigation.item %}
-                <li><a href="{{ nav_item.url | url }}">{{ nav_item.text }}</a></li>
-            {% endfor %}
-        </ul>
+  <div class="header-content-wrapper">
+    <h1>
+      <a href="{{ '/' | url }}">{{ site.name | downcase }}</a>
+    </h1>
+
+    <input
+      type="checkbox"
+      id="menu-toggle-checkbox"
+      class="menu-toggle-checkbox">
+    <label
+      for="menu-toggle-checkbox"
+      class="menu-toggle-label"
+      aria-label="Toggle menu">
+      <span class="menu-toggle-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </label>
+
+    {% assign currentPage = page.url | urlPage %}
+    <nav id="site-navigation">
+      <ul>
+        {% for nav_item in navigation.item %}
+          {% assign show_item = true %}
+
+          {% comment %} Check for Posts link and if collections.post is empty {% endcomment %}
+          {% if nav_item.text == "Posts" %}
+            {% if collections.post == undefined or collections.post.size == 0 %}
+              {% assign show_item = false %}
+            {% endif %}
+          {% endif %}
+
+          {% comment %} Check for Guides link and if collections.guide is empty {% endcomment %}
+          {% if nav_item.text == "Guides" %}
+            {% if collections.guide == undefined or collections.guide.size == 0 %}
+              {% assign show_item = false %}
+            {% endif %}
+          {% endif %}
+
+          {% if show_item %}
+            <li {% if page.url == nav_item.url %}class="active"{% endif %}>
+              <a href="{{ nav_item.url | url }}">{{ nav_item.text }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </nav>
+  </div>
 </header>

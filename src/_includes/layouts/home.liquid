@@ -2,6 +2,32 @@
 layout: layouts/base
 ---
 
-<article>
-    {{ content }}
-</article>
+<div class="home-content">
+  {{ content }}
+</div>
+{% if collections.post.size > 0 %}
+  <section class="latest-posts">
+    <h1 style="margin-top: 0;">Latest Posts</h1>
+      {% assign posts_descending = collections.post | reverse %}
+      <div class="items">
+        {% for item in posts_descending limit: 4 %}
+          {% render "partials/card"
+            , url: item.url
+            , data: item.data %}
+        {% endfor %}
+      </div>
+  </section>
+{% endif %}
+{% if collections.guide.size > 0 %}
+  <section class="latest-guides">
+      <h1>Latest Guides</h1>
+      {% assign guides_descending = collections.guide |  reverse %}
+      <div class="items">
+        {% for item in guides_descending limit: 4 %}
+          {% render "partials/card"
+            , url: item.url
+            , data: item.data %}
+        {% endfor %}
+      </div>
+  </section>
+{% endif %}

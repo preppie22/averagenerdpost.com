@@ -1,0 +1,14 @@
+---
+title: 'Post'
+layout: layouts/base
+---
+<h1 style="margin-top: 0;">{{ title }}</h1>
+<h3>{{subtitle}}</h3>
+
+{% if image %}
+  <img class="main-image" src="{{ image | url }}" alt="{{ title }} - Main image">
+{% endif %}
+
+<article>
+  {{ content }}
+</article>

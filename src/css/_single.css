@@ -1,0 +1,22 @@
+.main-image {
+    display: block; /* Allows margin auto to work for centering */
+    width: 100%;    /* Makes the image responsive to its container's width */
+    max-width: 720px; /* Optional: Set a max-width to prevent it from becoming too large on wide screens. Adjust as needed. */
+    height: auto;   /* Maintains the image's aspect ratio */
+    margin-top: 1.5em; /* Adds space above the image */
+    margin-bottom: 2em; /* Adds space below the image */
+    margin-left: auto;  /* Centers the image */
+    margin-right: auto; /* Centers the image */
+    border-radius: 8px; /* Optional: Adds slightly rounded corners */
+
+    
+}
+
+@media (max-width: 768px) { /* Adjust 480px breakpoint as needed, e.g., 30em */
+    .main-image{
+        max-width: 95%; /* Make it slightly less than full width to have some padding, or use a smaller fixed px value */
+        margin-top: 1em;    /* Reduce top margin */
+        margin-bottom: 1.5em; /* Reduce bottom margin */
+        border-radius: 8px;
+    }
+}

@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            {% if title %}
-                {{- title }} - 
-            {% endif %}
-            {{- site.name }}
-        </title>
-    </head>
-    <body>
-        {% render "partials/header", site: site, navigation: navigation %}
-        {{ content }}
-    </body>
+  <head>
+    <link rel="stylesheet" href="/css/bundle.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% if title %}
+        {{- title }} -
+      {% endif %}
+      {{- site.name }}
+    </title>
+    <meta name="generator" content="{{ eleventy.generator }}"/>
+    <meta name="description" content="{{ subtitle | default: site.description | escape }}"/>
+    <meta name="author" content="{{ site.author | escape}}"/>
+    {% if site.favicon-ico %}
+      <link rel="icon" href="{{ site.favicon-ico }}" sizes="any">
+    {% endif %}
+    {% if site.favicon-svg %}
+      <link rel="icon" href="{{ site.favicon-svg }}" type="image/svg+xml">
+    {% endif %}
+
+    {% comment %} Open Graph{% endcomment %}
+    <meta property="og:type" content="{% if layout == 'layouts/single' %}article{% else %}website{% endif %}" />
+    <meta property="og:title" content="{{ title | default: site.name | escape }}" />
+    <meta property="og:description" content="{{ subtitle | default: site.description | escape }}" />
+    <meta property="og:url" content="{{ page.url | absoluteUrl: site.url | escape }}" />
+    {% if image %}
+      <meta property="og:image" content="{{ image | absoluteUrl: site.url | escape }}" />
+    {% elsif site.defaultImage %}
+      <meta property="og:image" content="{{ site.defaultImage | absoluteUrl: site.url | escape }}" />
+    {% endif %}
+    <meta property="og:site_name" content="{{ site.name | escape }}" />
+
+    <link rel="canonical" href="{{ site.url }}{{ page.url | escape }}" />
+
+  </head>
+  <body>
+    <div class="top">
+      {% render "partials/header"
+        , page: page
+        , site: site
+        , navigation: navigation
+        , collections: collections %}
+    </div>
+    <div class="wrapper">
+      {{ content }}
+    </div>
+    <footer>
+      © 2025 Piyush Puranik
+    </footer>
+  </body>
 </html>

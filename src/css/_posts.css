@@ -1,0 +1,16 @@
+.posts {
+  display: block;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.post-listing {
+  display: block;
+  align-content: center;
+  margin: auto 5%;
+}

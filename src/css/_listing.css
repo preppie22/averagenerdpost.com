@@ -1,0 +1,39 @@
+.listing {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: auto 1.3em;
+    grid-template-areas: 
+        "date   title"
+        "none   sub";
+    align-items: baseline;
+    column-gap: 0.75em;
+    row-gap: 0.25em;
+    margin: 0 auto;
+    padding: 0.5em 0.2em;
+
+    .date {
+        grid-area: date;
+        color: var(--color-text-muted);
+        border-right: 1px solid var(--color-text-muted);
+        padding-right: 0.5em;
+    }
+    .title {
+        grid-area: title;
+        font-size: 1em;
+        margin: 0;
+    }
+    .subtitle {
+        grid-area: sub;
+        font-size: 0.8em;
+        color: var(--color-text-body);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &:hover {
+        background-color: var(--color-listing-hover);
+        border-radius: 4px;
+        text-decoration: none;
+    }
+}

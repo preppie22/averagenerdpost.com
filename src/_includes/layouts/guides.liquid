@@ -1,8 +1,18 @@
 ---
-title: 'Guides'
 layout: layouts/base
+nextPage: "Next Page"
+prevPage: "Prev Page"
 ---
-    
-<article>
-    {{ content }}
-</article>
+
+<section class="guides">
+  <h1>{{ title }}</h1>
+  {% if pagination.items.size > 0 %}
+    {% render 'partials/pagination'
+      , itemType: "guide-listing"
+      , pagination: pagination
+      , nextPage: nextPage
+      , prevPage: prevPage %}
+  {% else %}
+    Coming Soon!
+  {% endif %}
+</section>
