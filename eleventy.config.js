@@ -1,6 +1,7 @@
 import rssPlugin from '@11ty/eleventy-plugin-rss';
 import { DateTime } from "luxon"
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
+import markdownItAttrs from 'markdown-it-attrs';
 
 export default async function(eleventyConfig) {
     // Passthroughs
@@ -10,6 +11,7 @@ export default async function(eleventyConfig) {
     // Plugins
     eleventyConfig.addPlugin(rssPlugin);
     eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+    eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAttrs));
 
     // Filters
     eleventyConfig.addLiquidFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
@@ -39,7 +41,6 @@ export default async function(eleventyConfig) {
             return urlFragment; // Fallback to original fragment in case of an error
         }       
     });
-
     
     // Collections
     eleventyConfig.addCollection("post", function(collectionApi) {
@@ -47,6 +48,41 @@ export default async function(eleventyConfig) {
     });
     eleventyConfig.addCollection("guide", function(collectionApi) {
         return collectionApi.getFilteredByGlob("src/content/guides/*.md");
+    });
+
+    // Shortcodes
+    eleventyConfig.addShortcode("img-meta", function(src, alt, caption = "", attribution = "") {
+        if (!src || !alt) {
+            // You might want to throw an error or return a more visible warning in development
+            console.warn("img-meta shortcode: 'src' and 'alt' arguments are required.");
+            return `<p style="color: red;">Error: Image 'src' and 'alt' are required for img-meta shortcode.</p>`;
+        }
+
+        const attributionHTML = attribution 
+            ? `<span class="img-meta__attribution">${attribution}</span>` 
+            : '';
+        const captionHTML = caption 
+            ? `<figcaption class="img-meta__caption">${caption}</figcaption>` 
+            : '';
+
+        // Ensure paths passed to src are correctly handled by your setup (e.g., using the | url filter if needed)
+        // For simplicity, this example assumes 'src' is a ready-to-use path.
+        return `
+<figure class="img-meta">
+  <div class="img-meta__image-wrapper">
+    <img src="${src}" alt="${alt}" class="img-meta__image">
+    ${attributionHTML}
+  </div>
+  ${captionHTML}
+</figure>`;
+    });
+
+    // Preprocessors
+    eleventyConfig.addPreprocessor("drafts", "njk,md,liquid", (data, content) => {
+        if (data.draft && process.env.ELEVENTY_RUN_MODE == 'build') {
+            // Ignore this file.
+            return false;
+        }
     });
 };
 

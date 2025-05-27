@@ -4,7 +4,7 @@
     grid-template-rows: auto 1.3em;
     grid-template-areas: 
         "date   title"
-        "none   sub";
+        "date   sub";
     align-items: baseline;
     column-gap: 0.75em;
     row-gap: 0.25em;
@@ -16,10 +16,11 @@
         color: var(--color-text-muted);
         border-right: 1px solid var(--color-text-muted);
         padding-right: 0.5em;
+        align-self: stretch;
     }
     .title {
         grid-area: title;
-        font-size: 1em;
+        font-size: 1.2em;
         margin: 0;
     }
     .subtitle {
