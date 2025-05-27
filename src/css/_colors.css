@@ -1,33 +1,33 @@
 :root {
     /* Base & Text */
-    --color-bg-body: #F1F3F5;           /* Slightly darker Off-white */
-    --color-text-body: #212529;         /* Very Dark Gray (near black for readability) */
-    --color-text-heading: #000000;      /* Black for headings */
-    --color-text-muted: #6C757D;        /* Medium Gray for less important text */
+    --color-bg-body: #F1F3F5;         
+    --color-text-body: #212529;         
+    --color-text-heading: #000000;      
+    --color-text-muted: #6C757D;        
 
     /* Header Background (distinct from body/wrapper) */
-    --color-bg-header: #FFFFFF;         /* White for the header */
+    --color-bg-header: #FFFFFF;        
 
     /* Wrapper/Content Area */
-    --color-bg-wrapper: #F1F3F5;        /* Same as body - Slightly darker Off-white */
-    --color-shadow-wrapper: rgba(0, 0, 0, 0.06); /* Subtle shadow */
+    --color-bg-wrapper: #F1F3F5;
+    --color-shadow-wrapper: rgba(0, 0, 0, 0.06);
 
     /* Links & Accents */
-    --color-link: #007BFF;              /* Primary Blue */
-    --color-link-hover: #0056B3;        /* Darker Blue for hover */
+    --color-link: #007BFF;        
+    --color-link-hover: #0056B3;       
 
     /* Banner Specific */
-    --color-text-banner: #FFFFFF;       /* White text */
-    --color-link-banner: #58A6FF;       /* Brighter blue for links on dark banner */
+    --color-text-banner: #FFFFFF;       
+    --color-link-banner: #58A6FF;
 
     /* Card Specific */
-    --color-card-bg: #FFFFFF;           /* White for cards */
-    --color-card-border: #DEE2E6;       /* Light Gray border for cards */
-    --color-card-shadow: rgba(0, 0, 0, 0.08); /* Subtle shadow for cards */
+    --color-card-bg: #FFFFFF;           
+    --color-card-border: #DEE2E6;       
+    --color-card-shadow: rgba(0, 0, 0, 0.08);
 
     /* Listing Specific */
-    --color-listing-hover: #DEE2E6;     /* Using the card border color for a more prominent hover */
+    --color-listing-hover: #DEE2E6;
 
     /* General Borders */
-    --color-border-subtle: #CED4DA;     /* Light Gray for subtle dividers */
+    --color-border-subtle: #CED4DA;
 }

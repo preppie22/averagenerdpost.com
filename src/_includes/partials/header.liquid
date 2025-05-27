@@ -25,14 +25,12 @@
         {% for nav_item in navigation.item %}
           {% assign show_item = true %}
 
-          {% comment %} Check for Posts link and if collections.post is empty {% endcomment %}
           {% if nav_item.text == "Posts" %}
             {% if collections.post == undefined or collections.post.size == 0 %}
               {% assign show_item = false %}
             {% endif %}
           {% endif %}
 
-          {% comment %} Check for Guides link and if collections.guide is empty {% endcomment %}
           {% if nav_item.text == "Guides" %}
             {% if collections.guide == undefined or collections.guide.size == 0 %}
               {% assign show_item = false %}

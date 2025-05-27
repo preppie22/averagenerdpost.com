@@ -28,18 +28,17 @@
     display: inline-block;
 }
 
-/* Checkbox - Visually Hidden */
 .menu-toggle-checkbox {
-    display: none; /* Hide the actual checkbox */
+    display: none;
 }
 
-/* Burger Menu Label (replaces button) */
+/* Burger Menu Label */
 .menu-toggle-label {
-    display: none; /* Hidden on desktop, shown on mobile */
+    display: none; 
     padding: 10px;
     cursor: pointer;
-    z-index: 1001; /* Above the slide-in menu */
-    order: 2; /* Ensure it's on the right on mobile */
+    z-index: 1001; 
+    order: 2;
 }
 
 .menu-toggle-icon {
@@ -98,14 +97,14 @@
 @media (max-width: 768px) {
     .site-header {
         padding: 15px 20px;
-        /* position: relative; is already on .site-header, which is good for absolute positioning of nav */
+        /* position: relative; */
     }
     .header-content-wrapper {
-        position: relative; /* Ensure this wrapper can be a positioning context if needed */
+        position: relative;
     }
 
     .site-header h1 {
-        order: 1; /* Title on the left */
+        order: 1; 
     }
     .site-header h1 a {
         font-size: 1.2em;
@@ -118,29 +117,29 @@
     .site-header nav {
         order: 3; 
         /* Dropdown styles */
-        position: absolute; /* Position it relative to .site-header or .header-content-wrapper */
-        top: 100%; /* Position it right below the header */
+        position: absolute; 
+        top: 100%; 
         left: 0;
-        right: 0; /* Make it full width of the header */
-        width: 100%; /* Explicitly set width */
+        right: 0; 
+        width: 100%; 
         
         background-color: var(--color-bg-wrapper);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Dropdown shadow */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         
         /* Animation for dropdown */
-        max-height: 0; /* Initially hidden */
+        max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out; /* Animate max-height */
+        transition: max-height 0.4s ease-in-out;
         
         z-index: 999; /* Below the header content but above page content */
-        /* padding-top: 0; Remove fixed padding-top, content will flow naturally */
-        /* height: auto; Remove fixed height */
-        /* transform: none; Remove translateX */
+        /* padding-top: 0; */
+        /* height: auto; */
+        /* transform: none; */
     }
 
     /* When checkbox is checked, expand the nav dropdown */
     .menu-toggle-checkbox:checked ~ nav {
-        max-height: 500px; /* Adjust this value to be larger than your menu's max possible height */
+        max-height: 500px; 
         /* transform: none; */
     }
 
@@ -148,15 +147,15 @@
         flex-direction: column; 
         align-items: flex-start; 
         width: 100%;
-        padding-top: 10px; /* Add some padding at the top of the dropdown list */
-        padding-bottom: 10px; /* Add some padding at the bottom */
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     .site-header nav li { 
         margin: 0; 
         width: 100%; 
     }
     .site-header nav a {
-        padding: 12px 20px; /* Adjusted padding for dropdown items */
+        padding: 12px 20px;
         width: 100%; 
         box-sizing: border-box;
         border-bottom: 1px solid var(--color-border-subtle);
@@ -169,7 +168,6 @@
     }
 }
 
-/* Visually hidden class (ensure it's available, e.g., from _base.css) */
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;

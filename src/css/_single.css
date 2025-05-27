@@ -20,8 +20,8 @@
 
 .main-image-attribution {
     position: absolute;
-    bottom: 8px; /* Adjust as needed */
-    right: 8px; /* Adjust as needed */
+    bottom: 8px;
+    right: 8px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 0.25em 0.5em;
@@ -79,8 +79,8 @@
 
         max-width: calc(95% - 10px);
         box-sizing: border-box;
-        white-space: normal; /* Allow text to wrap if needed */
-        overflow: hidden; /* Hide overflow if text is still too long */
+        white-space: normal;
+        overflow: hidden;
         text-overflow: ellipsis;
     }
 }

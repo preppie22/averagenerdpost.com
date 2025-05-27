@@ -2,6 +2,7 @@ import rssPlugin from '@11ty/eleventy-plugin-rss';
 import { DateTime } from "luxon"
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 import markdownItAttrs from 'markdown-it-attrs';
+import htmlmin from "html-minifier-terser";
 
 export default async function(eleventyConfig) {
     // Passthroughs
@@ -53,7 +54,6 @@ export default async function(eleventyConfig) {
     // Shortcodes
     eleventyConfig.addShortcode("img-meta", function(src, alt, caption = "", attribution = "") {
         if (!src || !alt) {
-            // You might want to throw an error or return a more visible warning in development
             console.warn("img-meta shortcode: 'src' and 'alt' arguments are required.");
             return `<p style="color: red;">Error: Image 'src' and 'alt' are required for img-meta shortcode.</p>`;
         }
@@ -65,8 +65,6 @@ export default async function(eleventyConfig) {
             ? `<figcaption class="img-meta__caption">${caption}</figcaption>` 
             : '';
 
-        // Ensure paths passed to src are correctly handled by your setup (e.g., using the | url filter if needed)
-        // For simplicity, this example assumes 'src' is a ready-to-use path.
         return `
 <figure class="img-meta">
   <div class="img-meta__image-wrapper">
@@ -84,6 +82,23 @@ export default async function(eleventyConfig) {
             return false;
         }
     });
+
+    // Transforms
+    eleventyConfig.addTransform("htmlmin", function (content) {
+		if ((this.page.outputPath || "").endsWith(".html")) {
+			let minified = htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+                conservativeCollapse: true,
+			});
+
+			return minified;
+		}
+
+		// If not an HTML output, return content as-is
+		return content;
+	});
 };
 
 export const config = {
