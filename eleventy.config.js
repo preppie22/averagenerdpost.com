@@ -107,7 +107,7 @@ export const config = {
 
     dir: {
         input: "src",
-        output: "public",
+        output: "_site",
 
         // Relative to input
         includes: "_includes",
