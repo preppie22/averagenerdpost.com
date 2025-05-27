@@ -104,7 +104,8 @@
     }
 
     .site-header h1 {
-        order: 1; 
+        order: 1;
+        font-size: 1.8em; 
     }
 
     .menu-toggle-label {

@@ -1,7 +1,7 @@
 .avatar {
     float: left;
     border-radius: 100%;
-    margin: 0 2em 0 2em;
+    margin: 0 1em 0 1em;
     width: 180px;
     height: auto;
 }
@@ -9,5 +9,6 @@
 @media (max-width: 480px) {
     .avatar {
         width: 120px;
+        margin-bottom: 0.15em;
     }
 }
