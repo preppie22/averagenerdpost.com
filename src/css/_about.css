@@ -1,0 +1,13 @@
+.avatar {
+    float: left;
+    border-radius: 100%;
+    margin: 0 2em 0 2em;
+    width: 180px;
+    height: auto;
+}
+
+@media (max-width: 480px) {
+    .avatar {
+        width: 120px;
+    }
+}

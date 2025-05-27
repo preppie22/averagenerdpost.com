@@ -106,9 +106,6 @@
     .site-header h1 {
         order: 1; 
     }
-    .site-header h1 a {
-        font-size: 1.2em;
-    }
 
     .menu-toggle-label {
         display: block; /* Show burger label on mobile */
