@@ -26,7 +26,7 @@ No AI is used for editing or writing text content on this website. However, AI m
 
 ## Image Content Policy
 
-All images used on this website have an attribution if they have been sourced from elsewhere on the web. If an image is AI generated, it will be clearly stated. If an image has no attribution then it is my original work. You are free to link to any of the original images as long as they are clearly attributed (title, author, link).
+All images used on this website have an attribution if they have been sourced from elsewhere on the web. If an image is AI generated, it will be clearly stated. If an image has no attribution then it is my original work and is under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 
 ## Privacy Policy
 
