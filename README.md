@@ -39,4 +39,4 @@ npm run build
 
 # License
 
-This source code is licensed under the GNU General Public License 3.0
+This source code is licensed under [GPL-3.0-or-later](LICENSE.md) and all content in `/src/contents` is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Images that are considered "original work" are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) and other images used across the website are bound by their respective licenses.
