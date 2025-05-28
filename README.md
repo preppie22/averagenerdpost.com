@@ -1,4 +1,4 @@
-# [averagenerdpost.com](www.averagenerdpost.com)
+# [averagenerdpost.com](https://www.averagenerdpost.com)
 
 This is the source code for the website. It is build using [eleventy](https://www.11ty.dev/) and is provided as is if you want to take a look at how it works. If you feel there is anything that is not reflective of the policies posted on my website, please let me know and I will make sure to correct it.
 
