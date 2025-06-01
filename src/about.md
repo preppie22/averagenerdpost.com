@@ -17,6 +17,7 @@ If you have any feedback or ideas, you can email me at piyushpuranik \[at\] gmai
 [![GitHub Icon](/assets/icons/github.svg){eleventy:widths=40 style="margin: 8px 8px 0 0;"}](https://github.com/preppie22/)
 [![LinkedIn Icon](/assets/icons/linkedin.svg){eleventy:widths=40 style="margin: 8px 8px 0 0;"}](https://www.linkedin.com/in/piyush-puranik/)
 [![YouTube Icon](/assets/icons/youtube.svg){eleventy:widths=40 style="margin: 8px 8px 0 0;"}](https://www.youtube.com/@AverageNerdTalks?sub_confirmation=1)
+[![Bluesky Icon](/assets/icons/bluesky.svg){eleventy:widths=40 style="margin: 8px 8px 0 0;"}](https://bsky.app/profile/drcarp.bsky.social)
 
 # Policies
 
