@@ -38,7 +38,7 @@
         text-decoration: none;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 540px) {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1.2em;
         grid-template-areas:
