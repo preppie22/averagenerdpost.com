@@ -37,4 +37,21 @@
         border-radius: 4px;
         text-decoration: none;
     }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1.2em;
+        grid-template-areas:
+            "title" 
+            "date"
+            "sub";
+        .date {
+            font-size: 0.8em;
+            padding-right: 0.25em;
+            border-right: none;
+        }
+        .title {
+            font-size: 1em;
+        }
+    }
 }
