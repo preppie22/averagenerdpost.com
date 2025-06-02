@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "serve": "rm -rf public && npx eleventy --serve",
+    "serve": "npx wrangler dev",
     "build": "npx eleventy",
     "rebuild": "rm -rf public && npx eleventy"
   },
