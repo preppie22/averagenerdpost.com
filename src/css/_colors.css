@@ -30,4 +30,39 @@
 
     /* General Borders */
     --color-border-subtle: #CED4DA;
+
+    
+}
+[data-theme="dark"] {
+    /* Base & Text */
+    --color-bg-body: #1A1A1A;
+    --color-text-body: #E0E0E0;
+    --color-text-heading: #FFFFFF;
+    --color-text-muted: #A0A0A0;
+
+    /* Header Background */
+    --color-bg-header: #242424;
+
+    /* Wrapper/Content Area */
+    --color-bg-wrapper: #1A1A1A;
+    --color-shadow-wrapper: rgba(255, 255, 255, 0.05);
+
+    /* Links & Accents */
+    --color-link: #58A6FF;
+    --color-link-hover: #80BFFF;
+
+    /* Banner Specific */
+    --color-text-banner: #FFFFFF;
+    --color-link-banner: #80BFFF;
+
+    /* Card Specific */
+    --color-card-bg: #2C2C2C;
+    --color-card-border: #444444;
+    --color-card-shadow: rgba(255, 255, 255, 0.07);
+
+    /* Listing Specific */
+    --color-listing-hover: #383838;
+
+    /* General Borders */
+    --color-border-subtle: #555555;
 }
