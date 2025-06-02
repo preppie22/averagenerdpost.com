@@ -9,6 +9,7 @@ export default async function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/robots.txt");
+    eleventyConfig.addPassthroughCopy("src/js");
 
     // Plugins
     eleventyConfig.addPlugin(rssPlugin);

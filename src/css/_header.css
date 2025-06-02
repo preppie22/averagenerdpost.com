@@ -13,11 +13,13 @@
     max-width: 1280px;
     margin: 0 auto;
     width: 100%;
+    gap: 15px;
 }
 
 .site-header h1 {
     margin: 0;
-    z-index: 1001; /* Ensure title is above the slide-in menu if it overlaps */
+    z-index: 1001;
+    flex-shrink: 0;
 }
 
 .site-header h1 a {
@@ -76,10 +78,18 @@
 
 /* Desktop Navigation */
 .site-header nav {
-    display: block;
+    /* display: block; */
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 0;
 }
 .site-header nav ul {
-    list-style: none; padding: 0; margin: 0; display: flex; align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
 .site-header nav li { margin: 0 0 0 25px; }
 .site-header nav li:first-child { margin-left: 0; }
@@ -92,6 +102,9 @@
 .site-header nav a:hover { color: var(--color-link); }
 .site-header nav li.active a { color: var(--color-link); font-weight: 700; }
 
+.theme-switch {
+    flex-shrink: 0;
+}
 
 /* Mobile Navigation Styles */
 @media (max-width: 768px) {
@@ -104,16 +117,16 @@
     }
 
     .site-header h1 {
-        order: 1;
+        order: 2;
         font-size: 1.8em; 
     }
 
     .menu-toggle-label {
+        order: 1;
         display: block; /* Show burger label on mobile */
     }
     
     .site-header nav {
-        order: 3; 
         /* Dropdown styles */
         position: absolute; 
         top: 100%; 
@@ -163,6 +176,9 @@
     }
     .site-header nav li.active a { 
         background-color: var(--color-bg-body); 
+    }
+    .theme-switch {
+        order: 3
     }
 }
 

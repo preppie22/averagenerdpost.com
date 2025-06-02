@@ -1,0 +1,54 @@
+
+.light-mode-button {
+    background:0;
+    border: 0;
+    cursor: pointer;
+    height: 28px;
+    width: 60px;
+    position: relative;
+}
+.light-mode-button:focus {
+    outline:none;
+}
+.light-mode-button span:nth-child(1) {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 60px;
+    height:28px;
+    border-radius: 28px;
+    background-color: var(--color-card-bg);
+    box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+    transition: .3s;
+}
+.light-mode-button span:nth-child(2) {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-text-muted);
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.light-mode-button span:nth-child(2)::before {
+    content: '☀️';
+    font-size: 12px;
+    line-height: 1;
+    color: var(--color-text-body);
+    transition: content 0.3s ease-in-out;
+}
+body[data-theme='dark'] .light-mode-button span:nth-child(2) {
+    left: 36px;
+}
+
+body[data-theme='dark'] .light-mode-button span:nth-child(2)::before {
+    content: '🌕';
+    color: #E0E0E0;
+}
