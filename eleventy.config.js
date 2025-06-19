@@ -2,6 +2,7 @@ import rssPlugin from '@11ty/eleventy-plugin-rss';
 import { DateTime } from "luxon"
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 import markdownItAttrs from 'markdown-it-attrs';
+import { katex } from "@mdit/plugin-katex";
 import htmlmin from "html-minifier-terser";
 
 export default async function(eleventyConfig) {
@@ -15,6 +16,7 @@ export default async function(eleventyConfig) {
     eleventyConfig.addPlugin(rssPlugin);
     eleventyConfig.addPlugin(eleventyImageTransformPlugin);
     eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAttrs));
+    eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(katex, { output: "mathml" }));
 
     // Filters
     eleventyConfig.addLiquidFilter("dateToRfc3339", rssPlugin.dateToRfc3339);

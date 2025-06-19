@@ -2,6 +2,7 @@ name = "averagenerdpost-com"
 compatibility_date = "2025-06-01"
 routes = [
     { pattern = "averagenerdpost.com", custom_domain = true },
+    { pattern = "www.averagenerdpost.com", custom_domain = true }
 ]
 
 [assets]

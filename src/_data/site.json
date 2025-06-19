@@ -2,5 +2,6 @@
     "name": "Average Nerd Post",
     "url": "https://averagenerdpost.com",
     "description": "Tech posts and guides delivered to you ad free.",
-    "author": "Piyush Puranik"
+    "author": "Piyush Puranik",
+    "favicon_src": "/assets/favicon"
 }
