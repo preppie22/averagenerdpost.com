@@ -1,7 +1,13 @@
 <div class="card-container">
   <a href="{{ url | url }}" class="card" aria-label="Read more about {{ data.tile }}">
     {% if data.image %}
-      <div class="thumb" style="background-image: url({{ data.image | url }});"></div>
+      {% comment %} <div class="thumb" style="background-image: url({{ data.image | url }});"></div> {% endcomment %}
+       <div class="thumb">
+          <img src={{ data.image | url }} alt={{ data.title }}
+               width="1600"
+               height="900" 
+               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw">
+       </div>
     {% endif %}
     <article class="content{% if data.image %} with-image{% endif %}">
       <h1 class="title">{{ data.title }}</h1>

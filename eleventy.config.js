@@ -7,14 +7,22 @@ import htmlmin from "html-minifier-terser";
 
 export default async function(eleventyConfig) {
     // Passthroughs
-    eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addPassthroughCopy("src/assets/favicon");
+    eleventyConfig.addPassthroughCopy("src/assets/icons");
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/robots.txt");
     eleventyConfig.addPassthroughCopy("src/js");
 
     // Plugins
     eleventyConfig.addPlugin(rssPlugin);
-    eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+        outputDir: "./_site/assets/images/",
+        urlPath: "/assets/images/",
+        defaultAttributes: {
+            loading: "lazy",
+            decoding: "async",
+        },
+    });
     eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAttrs));
     eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(katex, { output: "mathml" }));
 
