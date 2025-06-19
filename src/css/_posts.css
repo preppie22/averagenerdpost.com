@@ -13,4 +13,15 @@
   display: block;
   align-content: center;
   margin: auto 5%;
+  a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Smooth transition */
+  }
+
+  a:hover,
+  a:focus {
+      color: var(--color-link-hover);
+      text-decoration: none;
+  }
 }
