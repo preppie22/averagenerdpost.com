@@ -13,8 +13,8 @@
     --color-shadow-wrapper: rgba(0, 0, 0, 0.06);
 
     /* Links & Accents */
-    --color-link: #007BFF;        
-    --color-link-hover: #0056B3;       
+    --color-link: #0056B3;        
+    --color-link-hover: #004085;       
 
     /* Banner Specific */
     --color-text-banner: #FFFFFF;       
@@ -48,7 +48,7 @@
     --color-shadow-wrapper: rgba(255, 255, 255, 0.05);
 
     /* Links & Accents */
-    --color-link: #58A6FF;
+    --color-link: #6BAEFF;
     --color-link-hover: #80BFFF;
 
     /* Banner Specific */
