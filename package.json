@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "npx wrangler dev",
     "build": "npx eleventy",
-    "rebuild": "rm -rf public && npx eleventy"
+    "rebuild": "rm -rf _site && npx eleventy"
   },
   "type": "module",
   "keywords": [],
