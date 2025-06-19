@@ -64,6 +64,10 @@ export default async function(eleventyConfig) {
     });
 
     // Shortcodes
+    eleventyConfig.addPairedShortcode("image-gallery", function(content) {
+        return `<div class="image-gallery">${content}</div>`;
+    });
+    
     eleventyConfig.addShortcode("img-meta", function(src, alt, caption = "", attribution = "") {
         if (!src || !alt) {
             console.warn("img-meta shortcode: 'src' and 'alt' arguments are required.");
