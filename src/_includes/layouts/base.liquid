@@ -28,9 +28,9 @@
     <meta property="og:description" content="{{ subtitle | default: site.description | escape }}" />
     <meta property="og:url" content="{{ page.url | absoluteUrl: site.url | escape }}" />
     {% if image %}
-      <meta property="og:image" content="{{ image | absoluteUrl: site.url | escape }}" />
+      {% ogImage image, site.url %}
     {% elsif site.defaultImage %}
-      <meta property="og:image" content="{{ site.defaultImage | absoluteUrl: site.url | escape }}" />
+      {% ogImage site.defaultImage, site.url %}
     {% endif %}
     <meta property="og:site_name" content="{{ site.name | escape }}" />
 

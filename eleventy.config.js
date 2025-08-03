@@ -1,9 +1,10 @@
 import rssPlugin from '@11ty/eleventy-plugin-rss';
 import { DateTime } from "luxon"
-import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
+import Image, { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 import markdownItAttrs from 'markdown-it-attrs';
 import { katex } from "@mdit/plugin-katex";
 import htmlmin from "html-minifier-terser";
+import path from "path";
 
 export default async function(eleventyConfig) {
     // Passthroughs
@@ -64,6 +65,33 @@ export default async function(eleventyConfig) {
     });
 
     // Shortcodes
+    eleventyConfig.addAsyncShortcode("ogImage", async function(src, siteUrl) {
+        if (!src) {
+            return '';
+        }
+        const imageSrc = path.join(eleventyConfig.dir.input, src);
+
+        try {
+            let metadata = await Image(imageSrc, {
+                widths: [1200],
+                formats: ["jpeg"],
+                outputDir: "./_site/assets/images/",
+                urlPath: "/assets/images/",
+                filenameFormat: function (id, src, width, format, options) {
+                    const name = path.basename(src, path.extname(src));
+                    return `${name}-og.${format}`;
+                }
+            });
+            
+            const relativeUrl = metadata.jpeg[0].url;
+            const absoluteUrl = new URL(relativeUrl, siteUrl).href;
+
+            return `<meta property="og:image" content="${absoluteUrl}">`;
+        } catch (e) {
+            console.error(`Error processing og:image with src "${src}": ${e.message}`);
+            return '';
+        }
+    });
     eleventyConfig.addPairedShortcode("image-gallery", function(content) {
         return `<div class="image-gallery">${content}</div>`;
     });
