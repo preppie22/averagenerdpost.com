@@ -12,7 +12,7 @@ Since childhood, I've had this obsession with finding patterns in numbers. Now, 
 
 Have you ever had that kid in class who was nerdy, annoying, loved physics, and computers? That was me. Kinda like Jason Fox from [FoxTrot](https://foxtrot.com/) but maybe not as smart. I've always believed that knowledge shouldn't be behind a paywall, but its application and any product derived from it is fair game. For example, the [LZMA](https://en.wikipedia.org/wiki/LZMA) compression method (7zip) is open source, but you can totally write an application that implements it and sell it. Having knowledge on fundamental technologies open to the public encourages research and improves the lives of everyone on this planet.
 
-If you have any feedback or ideas, you can email me at piyushpuranik \[at\] gmail · com. You can also find me on any one of my other profiles below: 
+If you have any feedback or ideas, you can email me at piyushpuranik \[at\] gmail · com. You can also find me on the following platforms: 
 
 [![GitHub Icon](/assets/icons/github.svg){eleventy:widths=40 style="margin: 8px 8px 0 0;"}](https://github.com/preppie22/)
 [![LinkedIn Icon](/assets/icons/linkedin.svg){eleventy:widths=40 style="margin: 8px 8px 0 0;"}](https://www.linkedin.com/in/piyush-puranik/)
