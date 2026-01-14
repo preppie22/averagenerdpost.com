@@ -69,7 +69,9 @@ export default async function(eleventyConfig) {
         if (!src) {
             return '';
         }
-        const imageSrc = path.join(eleventyConfig.dir.input, src);
+
+        const isFullUrl = src.startsWith('http://') || src.startsWith('https://');
+        const imageSrc = isFullUrl ? src : path.join(eleventyConfig.dir.input, src);
 
         try {
             let metadata = await Image(imageSrc, {
